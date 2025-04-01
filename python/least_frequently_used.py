@@ -25,4 +25,5 @@ class LFUCache:
         if key in self.cache:
             self.freq[key] += 1
             return self.cache[key]
-        return None
+        
+        return -1
