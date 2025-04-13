@@ -7,19 +7,22 @@ public class PlaceFlower {
             boolean right = (i == flowerbed.length - 1 || flowerbed[i + 1] == 0);
 
             if (left && right)
-                if (flowerbed[i] == 0)
+                if (flowerbed[i] == 0) {
+                    flowerbed[i] = 1;
                     count++;
                     if (count >= n)
                         return true;
+                }
+
 
 
         }
-        return false;
+        return count >= n;
     }
 
     public static void main(String[] args) {
-        int arr[] = {1, 0 ,0, 0, 1};
-        canPlaceFlowers(arr, 1);
+        int arr[] = {1, 0 ,0, 0, 0, 1};
+        canPlaceFlowers(arr, 2);
 
     }
 }
