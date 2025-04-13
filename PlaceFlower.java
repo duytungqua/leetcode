@@ -1,5 +1,3 @@
-package java;
-
 public class PlaceFlower {
 
     public static boolean canPlaceFlowers(int[] flowerbed, int n) {
@@ -9,8 +7,10 @@ public class PlaceFlower {
             boolean right = (i == flowerbed.length - 1 || flowerbed[i + 1] == 0);
 
             if (left && right)
-                if (count >= n)
-                    return true;
+                if (flowerbed[i] == 0)
+                    count++;
+                    if (count >= n)
+                        return true;
 
 
         }
