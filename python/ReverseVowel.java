@@ -5,24 +5,23 @@ import java.util.List;
 
 public class ReverseVowel {
     public String reverseVowel(String test){
-        List<Character> strVowel = Arrays.asList('u', 'e', 'o', 'a', 'i', 'U', 'E', 'O', 'A', 'I');
-        char[] chars = test.toCharArray();
-        
+       List<Character> lstVowel = Arrays.asList('u','e','o','a','i','U', 'E','O','A','I');
+         char[] arr = test.toCharArray();
         int i = 0;
-        int j = chars.length - 1;
+        int j = arr.length - 1;
         while (i < j) {
-            if (!strVowel.contains(chars[i]))
+            if (!lstVowel.contains(arr[i])) {
                 i++;
-            else if (!strVowel.contains(chars[j]))
+            } else if (!lstVowel.contains(arr[j])) {
                 j--;
-            else {
-                char temp = chars[i];
-                chars[i] = chars[j];
-                chars[j] = temp;
+            } else {
+                char temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
                 i++;
                 j--;
             }
         }
-        return new String(chars);
+        return new String(arr);
     }
 }
