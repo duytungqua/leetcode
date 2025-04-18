@@ -6,6 +6,9 @@ public class ReverseWorld {
         String[] arrString = trimS.split(" ");
         StringBuilder sb = new StringBuilder();
         for (int j = arrString.length - 1; j >= 0; j --) {
+            if (arrString[j].isBlank()) {
+                continue;
+            }
             sb.append(arrString[j]);
             if (j != 0) {
                 sb.append(" ");
